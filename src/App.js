@@ -4,7 +4,6 @@ import { Mail, Github, Linkedin, Facebook, Instagram, Sun, Moon } from "lucide-r
 import Header from "./Header";
 import Certifications from "./Certifications";
 import Project from "./Project";
-import { HashRouter, Routes, Route } from "react-router-dom";
 
 
 export default function App() {
