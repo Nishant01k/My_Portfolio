@@ -102,8 +102,8 @@ export default function App() {
           >
             <h3 className="text-4xl font-bold mb-6 text-center">About Me</h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              I'm <span className="font-semibold">Santosh Kumar Chaudhary</span>, a final-year <span className="text-blue-600 font-medium">Electrical & Electronic Engineer</span> 
-              and passionate <span className="text-blue-600 font-medium">app developer</span>. I love combining technology and creativity to solve real-world problems. From developing innovative apps to exploring smart grid research. I thrive on turning ideas into impactful solutions. My goal is to continually learn, create, and contribute to projects that make a difference.
+              I'm <span className="font-semibold">Santosh Kumar Chaudhary</span>, a final-year student <span className="text-blue-600 font-medium">Electrical & Electronic Engineer </span> 
+              and a passionate <span className="text-blue-600 font-medium">app developer</span>. I love combining technology and creativity to solve real-world problems. From developing innovative apps to exploring smart grid research. I thrive on turning ideas into impactful solutions. My goal is to continually learn, create, and contribute to projects that make a difference.
             </p>
 
             <div className="mt-8 text-center">
