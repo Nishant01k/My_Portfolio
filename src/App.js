@@ -87,7 +87,7 @@ export default function App() {
           >
             <div className="absolute w-72 h-72 bg-blue-500/20 dark:bg-blue-400/10 blur-3xl rounded-full -z-10"></div>
             <img
-              src={process.env.PUBLIC_URL + "/profile1.jpg"}
+              src={process.env.PUBLIC_URL + "/profile.jpg"}
               alt="Santosh Kumar Chaudhary"
               className="w-72 h-72 object-cover rounded-3xl shadow-lg border-4 border-black dark:border-white"
             />
