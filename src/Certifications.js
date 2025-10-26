@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function Certifications() {
   const certificates = [
     { title: "Ministry of Education, Science and Technology (MOEST)\n- कदर पत्र", image: "/certificate/1.jpg" },
+    { title: "Internship Letter — Nepal Electricity Authority (NEA)", image: "/certificate/17.jpg" },
     { title: "UI/UX Design Winner", image: "/certificate/2.jpg" },
     { title: "Certificate of Completion", image: "/certificate/13.jpg" },
     { title: "Open Project Competition", image: "/certificate/3.jpg" },
