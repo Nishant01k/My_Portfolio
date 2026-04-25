@@ -1,33 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Header() {
+export default function Header({ darkMode, setDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   const navItems = [
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
+    { name: "Research Papers", href: "#research-papers" },
     { name: "Projects & Achievements", href: "#projects" },
     { name: "Certifications", href: "#certificates" },
     { name: "Contact", href: "#contact" },
   ];
 
-  // Apply dark mode class to <html>
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2">
           <span className="font-bold text-xl text-gray-900 dark:text-white">
             Santosh Kumar Chaudhary
           </span>
@@ -49,6 +39,7 @@ export default function Header() {
           {/* Dark Mode Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle dark mode"
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white shadow hover:scale-105 transition-transform ml-4"
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -59,6 +50,7 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-4">
           <button
             onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle dark mode"
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white shadow hover:scale-105 transition-transform"
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -67,6 +59,7 @@ export default function Header() {
           <button
             className="text-gray-700 dark:text-gray-200"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

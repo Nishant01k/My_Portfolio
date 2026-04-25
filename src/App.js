@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { Mail, Github, Linkedin, Facebook, Instagram } from "lucide-react";
 import Header from "./Header";
 import Certifications from "./Certifications";
 import Project from "./Project";
+import Research from "./Research";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -19,18 +21,24 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
-      <title>Santosh Kumar Chaudhary | Portfolio</title>
+      <Helmet>
+        <title>Santosh Kumar Chaudhary | Portfolio</title>
+        <meta
+          name="description"
+          content="Electrical and Electronics Engineering portfolio of Santosh Kumar Chaudhary, featuring power systems, automation, research papers, projects, and certifications."
+        />
+      </Helmet>
 
       {/* Header with dark mode toggle */}
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-white dark:bg-gray-800 text-black dark:text-white">
+      <section id="home" className="relative w-full min-h-screen pt-24 px-4 flex flex-col justify-center items-center overflow-hidden bg-white dark:bg-gray-800 text-black dark:text-white">
         <motion.h1
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="text-8xl md:text-[20rem] font-extrabold tracking-tight uppercase select-none relative text-black dark:text-white"
+          className="text-6xl sm:text-8xl md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-extrabold tracking-tight uppercase select-none relative text-black dark:text-white leading-none"
           style={{
             textShadow: `
               1px 1px 0 #444,
@@ -48,16 +56,16 @@ export default function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg md:text-2xl mt-6 font-medium text-gray-700 dark:text-gray-300 text-center"
+          className="text-base sm:text-lg md:text-2xl mt-6 font-medium text-gray-700 dark:text-gray-300 text-center max-w-3xl"
         >
-          Electrical and Electronic Engineering | App Developer | Tech Enthusiast
+          Electrical and Electronics Engineering | Power Systems | Automation | Research
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-10 flex gap-6 flex-wrap justify-center"
+          className="mt-10 flex gap-4 sm:gap-6 flex-wrap justify-center"
         >
           <a
             href="#projects"
@@ -102,8 +110,7 @@ export default function App() {
           >
             <h3 className="text-4xl font-bold mb-6 text-center">About Me</h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              I'm <span className="font-semibold">Santosh Kumar Chaudhary</span>, a final-year student of <span className="text-blue-600 font-medium">Electrical & Electronic Engineer </span> 
-              and a passionate <span className="text-blue-600 font-medium">app developer</span>. I love combining technology and creativity to solve real-world problems. From developing innovative apps to exploring smart grid research. I thrive on turning ideas into impactful solutions. My goal is to continually learn, create, and contribute to projects that make a difference.
+              I'm <span className="font-semibold">Santosh Kumar Chaudhary</span>, an Electrical and Electronics Engineering focused on power systems, automation, research, and AI-driven engineering solutions. I enjoy combining technology, creativity, and engineering knowledge to solve real-world problems. From developing practical engineering tools to exploring research in electrical and electronic engineering, I thrive on turning ideas into meaningful outcomes.
             </p>
 
             <div className="mt-8 text-center">
@@ -118,29 +125,8 @@ export default function App() {
           </motion.div>
         </div>
       </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-16 px-6 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-12">Skills</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            {[
-              "ETAP", "MATLAB", "AutoCAD", "Firebase", "Flutter", "Android Studio (Java)",
-              "UI/UX", "Project Management", "Artificial Neural Networks (ANN)", "Unity",
-              "Data Analysis", "Blender"
-            ].map((skill) => (
-              <motion.div
-                key={skill}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="p-6 rounded-3xl shadow-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 font-semibold text-lg flex items-center justify-center h-28 border border-gray-200 dark:border-gray-600 hover:shadow-2xl hover:border-gray-300 transition-all duration-300"
-              >
-                {skill}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Research Papers Section */}
+      <Research />
 
       {/* Projects Section */}
       <Project />
@@ -162,7 +148,8 @@ export default function App() {
               { href: "https://github.com/nishant01k", icon: <Github size={24} />, label: "GitHub", bgHover: "hover:bg-gray-900 hover:text-white" },
               { href: "https://linkedin.com/in/santosh-kumar-chaudhary-06baa9350", icon: <Linkedin size={24} />, label: "LinkedIn", bgHover: "hover:bg-blue-700 hover:text-white" },
               { href: "https://facebook.com/santosh01k", icon: <Facebook size={24} />, label: "Facebook", bgHover: "hover:bg-blue-600 hover:text-white" },
-              { href: "https://instagram.com/nishant_01k?igsh=ZGprempmcnZ1aTdy", icon: <Instagram size={24} />, label: "Instagram", bgHover: "hover:bg-pink-500 hover:text-white" }
+              { href: "https://instagram.com/nishant_01k?igsh=ZGprempmcnZ1aTdy", icon: <Instagram size={24} />, label: "Instagram", bgHover: "hover:bg-pink-500 hover:text-white" },
+              { href: "https://orcid.org/0009-0000-1475-5445", icon: <span className='font-bold'>ORCID</span>, label: "ORCID", bgHover: "hover:bg-green-600 hover:text-white" }
             ].map((item) => (
               <motion.a
                 key={item.label}
@@ -179,10 +166,14 @@ export default function App() {
         </div>
       </section>
 
+
+
       {/* Footer */}
       <footer className="py-6 text-center text-gray-500 dark:text-gray-400 text-sm">
-        © {new Date().getFullYear()} Santosh Kumar Chaudhary. All rights reserved.
+        Copyright {new Date().getFullYear()} Santosh Kumar Chaudhary. All rights reserved.
       </footer>
     </div>
   );
+
+  
 }

@@ -30,13 +30,13 @@ const projectsData = [
     text: "Ongoing Project",
   },
   {
-    title: "Mero Book – Share & Study Notes",
+    title: "Mero Book - Share & Study Notes",
     description:
-      "Mero Book is a mobile app that allows students to share notes, study materials, and book summaries. It’s designed to make learning collaborative, easier, and accessible anytime.",
+      "Mero Book is a mobile app that allows students to share notes, study materials, and book summaries. It's designed to make learning collaborative, easier, and accessible anytime.",
     type: "text",
   },
   {
-    title: "Waste-to-Wealth – Transforming Waste into Value",
+    title: "Waste-to-Wealth - Transforming Waste into Value",
     description:
       "The Waste-to-Wealth Platform is an innovative solution that turns household and industrial waste into valuable resources. The platform connects waste generators, collectors, and recyclers, creating a sustainable ecosystem for environmental and economic benefits.",
     type: "status",
@@ -168,7 +168,7 @@ const Project = () => {
                           }}
                           className="flex items-center text-gray-800 dark:text-gray-200 font-semibold"
                         >
-                          <span className="mr-3 text-2xl">✨</span>
+                          <span className="mr-3 text-xl font-bold text-blue-600 dark:text-blue-400">*</span>
                           {ach.count ? (
                             <CountUp
                               start={0}
