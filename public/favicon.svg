@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0d0d0d"/>
+
+  <!-- C: relay protection field -->
+  <path
+    d="M55.2 6H18C10.4 6 6 10.4 6 18v28c0 7.6 4.4 12 12 12h37.2V48H20c-2.8 0-4-1.2-4-4V20c0-2.8 1.2-4 4-4h35.2Z"
+    fill="#ecece7"
+  />
+
+  <!-- S: sensed current path -->
+  <path
+    d="M48.4 18.8H20.8v7.6h20v3.2h-20v7.6h20v2.4h-20v7.6h27.6V29.6h-20v-3.2h20Z"
+    fill="#d8ff3e"
+  />
+</svg>
