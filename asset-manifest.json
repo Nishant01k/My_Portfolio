@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a55b90ba.css",
+    "main.css": "/static/css/main.a202ae42.css",
     "main.js": "/static/js/main.c503f30d.js",
     "static/media/grid-intelligence-v2.png": "/static/media/grid-intelligence-v2.09be0d37d1e4bbabe938.png",
     "static/media/earnify-logo.png": "/static/media/earnify-logo.ebe127abeccb9b87438a.png",
     "static/media/hero-background.jpeg": "/static/media/hero-background.f80159c794af57dba34d.jpeg",
     "index.html": "/index.html",
-    "main.a55b90ba.css.map": "/static/css/main.a55b90ba.css.map",
+    "main.a202ae42.css.map": "/static/css/main.a202ae42.css.map",
     "main.c503f30d.js.map": "/static/js/main.c503f30d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a55b90ba.css",
+    "static/css/main.a202ae42.css",
     "static/js/main.c503f30d.js"
   ]
 }
