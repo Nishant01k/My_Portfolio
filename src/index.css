@@ -451,4 +451,48 @@ section#contact.contact {
   .recognition-row h3{font-size:clamp(1.6rem,8vw,2.2rem)}
   .recognition-row p{margin:8px 0 0;max-width:none}
 }
+
+/* Small-screen finishing pass: preserve reading width, tap targets and compact evidence cards. */
+@media(max-width:800px){
+  .site-shell{overflow-x:clip}
+  .site-header{padding-inline:5vw}
+  .menu-button{display:grid;place-items:center;min-width:44px;min-height:44px;padding:8px}
+  .mobile-nav{max-height:calc(100svh - var(--nav-height));overflow-y:auto;padding:20px 5vw 26px;gap:12px}
+  .mobile-nav a{display:block;min-height:40px;padding:10px 0}
+  .section-head{align-items:flex-start;gap:16px;line-height:1.45}
+  .section-head>span{max-width:52%;text-align:right}
+  .hero-name p{max-width:32ch;padding:0;white-space:normal;line-height:1.6}
+  .metrics{padding:22px 5vw}
+  .metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metric-card{min-height:190px;padding:20px 12px 18px}
+  .metric-value{font-size:clamp(2.35rem,11.5vw,3.5rem);white-space:nowrap}
+  .metric-label{margin-top:14px;line-height:1.3}
+  .metric-card p{font-size:7.5px;line-height:1.5;text-wrap:balance}
+}
+@media(max-width:360px){
+  .metrics-grid{grid-template-columns:1fr}
+  .metric-card{min-height:168px}
+}
+
+/* Phone and compact-tablet alignment refinements. */
+@media(max-width:1000px){
+  .recognition-block{grid-template-columns:1fr;gap:24px;margin-top:32px}
+  .recognition-intro h3{max-width:none;margin:0}
+  .recognition-row{grid-template-columns:34px minmax(0,1fr);align-items:start;gap:16px;padding:22px 0}
+  .recognition-row h3{grid-column:2;max-width:none;text-align:left}
+  .recognition-row p{grid-column:2;margin:8px 0 0;max-width:none;text-align:justify;text-align-last:left;text-justify:inter-word;hyphens:auto}
+  section#contact.contact{min-height:0}
+  .contact{min-height:0;justify-content:flex-start;padding-bottom:34px}
+  .contact-bottom{margin-top:clamp(120px,18svh,160px)}
+  .site-shell:after{content:none}
+}
+@media(max-width:900px){
+  section.expertise .capability>p,
+  section.expertise .capability ul{width:calc(100% - 16px);margin-left:16px}
+  section.expertise .capability>p{hyphens:none;text-align:justify;text-align-last:left;text-justify:inter-word}
+}
+@media(max-width:800px){
+  .contact{min-height:0;justify-content:flex-start;padding-bottom:34px}
+  .contact-bottom{margin-top:clamp(120px,18svh,160px)}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.cursor-glow{display:none}}
