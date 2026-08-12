@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 - Page Not Found</title>
+    <meta name="description" content="The requested page could not be found." />
+    <script>
+      // GitHub Pages serves this static file for unknown paths. Save the requested
+      // path, then load the React entry point so its catch-all route can render.
+      sessionStorage.setItem("portfolio-404-path", location.pathname + location.search + location.hash);
+      location.replace("/");
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>This page requires JavaScript to redirect properly.</p>
+    </noscript>
+  </body>
+</html>
