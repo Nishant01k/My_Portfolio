@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import CountUp from "react-countup";
 import earnifyLogo from "./assets/earnify-logo.png";
@@ -442,21 +443,33 @@ function ProjectVisual({ type, title }) {
 
 export default function App() {
   const reducedMotion = useReducedMotion();
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const move = (event) => {
       document.documentElement.style.setProperty("--mx", `${event.clientX}px`);
       document.documentElement.style.setProperty("--my", `${event.clientY}px`);
     };
-    const hash = window.location.hash.replace("#", "");
+
+    const hash = location.hash.replace("#", "");
     const scrollFrame = window.requestAnimationFrame(() => {
-      if (hash) document.getElementById(hash)?.scrollIntoView({ block: "start" });
+      if (hash) {
+        const target = document.getElementById(hash);
+        if (target) {
+          target.scrollIntoView({ block: "start" });
+        } else {
+          navigate("/404", { replace: true });
+        }
+      }
     });
+
     window.addEventListener("pointermove", move);
     return () => {
       window.cancelAnimationFrame(scrollFrame);
       window.removeEventListener("pointermove", move);
     };
-  }, []);
+  }, [location.hash, navigate]);
 
   return (
     <div className="site-shell">
